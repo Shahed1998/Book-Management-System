@@ -1,0 +1,12 @@
+<!-- <h1>Name: {{this.publisher.data.name}}</h1> -->
+<div class="container">
+    <h1 class="p-5 text-center">{{this.publisher}}</h1>  
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <a [routerLink]="['/publisher/edit', publisherId]" class="btn btn-primary w-100 p-3">Edit publisher</a>
+        </div>
+        <div class="col-lg-6">
+            <a [routerLink]="['/publisher/delete', publisherId]" class="btn btn-secondary w-100 p-3">Delete publisher</a> 
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+.active {
+    color: red !important;
+}
+
+.navbar-brand img{
+    width:15%;
+}

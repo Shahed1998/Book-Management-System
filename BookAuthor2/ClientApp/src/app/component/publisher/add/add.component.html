@@ -1,0 +1,12 @@
+<div class="container min-vh-100 d-flex align-items-center justify-content-center">
+    <div class="inner-container">
+        <h1 class="text-center">Add publisher</h1>
+        <p>
+            <input type="text" class="mt-3 p-2 w-100" name="Name" id="" [(ngModel)]="publisherName">
+            <button class="btn btn-primary w-100 p-2 mt-3" (click)="save()">
+                <div class="btn-inner-1" *ngIf="spinner == false">Add</div>
+                <div class="btn-inner-2" *ngIf="spinner == true"><app-spinner [spinner]=true></app-spinner></div>
+            </button>
+        </p>
+    </div>
+</div>

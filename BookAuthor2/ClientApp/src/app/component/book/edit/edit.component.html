@@ -1,0 +1,74 @@
+<div class="container d-flex align-items-center justify-content-center min-vh-50">
+    <app-modal [entity]="entity" [route]="route"></app-modal>
+    <div class="mb-5 inner-edit-container-body">
+        <h1 class="p-5 text-center">Edit Book</h1>
+        <form>
+            <div class="name">
+                <label for="Name">Title:</label>
+                <input type="text" name="Name" [(ngModel)]="title" id="BookName" class="p-2 w-100">
+            </div> <br>
+
+            <div class="type">
+                <label for="type">Type:</label>&nbsp;
+                <select name="genre" id="selectGenre" class="w-100 p-2" [(ngModel)]="type">
+                    <option *ngFor="let g of genre; let i = index" [value]="i">{{g}}</option>
+                </select> 
+            </div> <br>
+
+            <div class="description">
+                <label for="desc">Description:</label>&nbsp;
+                <textarea name="desc" style="resize: none;" id="" cols="30" rows="5" class="w-100 p-2"
+                [(ngModel)]="description"
+                ></textarea>
+            </div> <br>
+
+            <div class="price">
+                <label for="price">Price:</label>&nbsp;
+                <input type="number" class="w-100 p-2" name="price" id="" [(ngModel)]="price">
+            </div> <br>
+
+            <div class="publishedDate">
+                <label for="pDate">Published Date:</label>&nbsp;
+                <input type="date" name="pDate" id="pDate" class="w-100 p-2" [(ngModel)]="publishedDate" disabled="">
+            </div><br>
+
+            <div class="publisher">
+                <label for="pDate">Publishers:</label>&nbsp;
+                <select name="publisher" id="publisher" class="w-100 p-2" [(ngModel)]="publisherId">
+                    <option
+                        *ngFor="let publisher of publishers"
+                        [value]="publisher.id"
+                    >
+                        {{publisher.name}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="authors mt-3">
+                <label for="authors">Authors:</label>&nbsp;
+                <ng-select
+                    [items]="allAuthors"
+                    bindLabel="name"
+                    bindValue="id"
+                    [multiple]="true"
+                    [closeOnSelect]="false"
+                    name="authorList"
+                    placeholder="Select authors"
+                    [(ngModel)]="selectedAuthorIds"
+                    (change)="selectedAuthorFn($event)"
+                >
+                    <ng-template ng-option-tmp let-item="item" let-index="index">
+                        <b>{{ item.name }}</b>
+                    </ng-template>
+                </ng-select>
+            </div>
+            <div class="button">
+                <br>
+                <button class="btn btn-primary w-100 p-2" (click)="editBook()">
+                    <div *ngIf="spinner == false">Update Book</div>
+                    <div *ngIf="spinner == true" ><app-spinner [spinner]="spinner"></app-spinner></div>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

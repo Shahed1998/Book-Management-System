@@ -1,0 +1,31 @@
+<!-- <p>{{author.data.name}}</p> -->
+<div class="container d-flex align-items-center justify-content-center min-vh-50">
+    <div>
+        <h1 class="p-5">Edit Author</h1>
+        <form>
+
+            <div class="name">
+                <label for="Name">Name:</label>&nbsp;
+                <input type="text" name="Name" id="AuthorName" class="p-2 w-100" [(ngModel)]="authorName">   
+            </div>
+            
+            <div class="dob">
+                <label for="dob">Date of birth:</label>&nbsp;
+                <input type="date" name="dob" id="dob" class="p-2 w-100" [(ngModel)]="authorDOB">   
+            </div>
+
+            <div class="shortBio">
+                <label for="shortBio">Short bio:</label>&nbsp;
+                <textarea name="shortBio" id="" cols="30" rows="10" class="w-100" [(ngModel)]="authorBio"></textarea>
+            </div>
+
+            <div class="button">
+                <br>
+                <button (click)="EditAuthor()" class="btn btn-primary w-100 p-3">
+                    <app-spinner [spinner]="spinner" *ngIf="spinner === true"></app-spinner>
+                    <div *ngIf="spinner === false">Edit Author</div>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

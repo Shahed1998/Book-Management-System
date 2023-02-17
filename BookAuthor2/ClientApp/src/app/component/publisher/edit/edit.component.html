@@ -1,0 +1,10 @@
+<div class="container min-vh-100 d-flex align-items-center justify-content-center">
+    <div class="inner">
+        <label for="name">Publisher name:</label><br>
+        <input type="text" name="name" id="name" class="p-3" [(ngModel)]="publisher"><br>
+        <button class="btn btn-primary mt-3" (click)="update()">
+            <app-spinner [spinner]="spinner" *ngIf="spinner === true"></app-spinner>
+            <div class="div" *ngIf="spinner === false">Update</div>
+        </button>
+    </div>
+</div>

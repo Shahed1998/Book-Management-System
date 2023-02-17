@@ -1,0 +1,48 @@
+<div class="container">
+    <h1 class="p-5 text-center">{{bookTitle}}</h1>  
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <a [routerLink]="['/book/edit', bookId]" class="btn btn-primary w-100 p-3">Edit book</a>
+        </div>
+        <div class="col-lg-6">
+            <a [routerLink]="['/book/delete', bookId]" class="btn btn-secondary w-100 p-3">Delete book</a> 
+        </div>
+    </div>
+    <h3 class="p-3 text-center">Details</h3> <hr>
+    <p>
+        <b>Title: </b>
+        {{bookTitle}}
+    </p>
+    <p>
+        <b>Type:</b>
+        {{genre[bookGenreType]}}
+    </p>
+    <p>
+        <b>Published date:</b>
+        {{bookPublishedDate}}
+    </p>
+    <p>
+        <b>Publisher: </b>
+        {{bookPublisherName}}
+    </p>
+    <p>
+        <b>Price: </b>
+        {{bookPrice}}
+    </p>
+    <p>
+        <b>Description: </b>
+        {{bookDescription}}
+    </p>
+    <p *ngIf="totalBookAuthors > 0">
+        <b>Authors: </b>
+        <select name="" id="" (change)="GoToAuthorDetails($event)">
+            <option value="" disabled selected><b>View authors</b></option>
+            <option *ngFor="let authors of bookAuthors" value={{authors.id}} >
+                {{authors.name}}
+            </option>
+        </select>
+    </p>
+</div>
+
+
+

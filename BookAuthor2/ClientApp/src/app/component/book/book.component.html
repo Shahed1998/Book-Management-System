@@ -1,0 +1,50 @@
+<!-- The sidebar -->
+<div class="row">
+    <div class="col-lg-2">
+        <app-sidebar [whichPage]="'book'"></app-sidebar>
+    </div>
+        <!-- Page content -->
+        <div class="content">
+            <h1 class="p-5 text-center">All books</h1>
+            <div class="container" *ngIf="loadPage == true && spinner == false">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <app-pagination-button [parent]="'book'" [nextCount]=totalCount [page]="page"></app-pagination-button>
+                    </div>
+                    <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                        <input type="text" placeholder="Search.." class="p-2 w-50" (keyup)="search()" [(ngModel)]="searchField">
+                    </div>
+                </div>
+            </div>
+            <app-spinner [spinner]="spinner"></app-spinner>
+
+            <div *ngIf="loadPage == true && spinner == false">
+                
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Info</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let book of books.data" >
+                            <td class="p-3">{{book.title}}</td>
+                            <td>{{genre[book.type]}}</td>
+                            <td><a [routerLink]="['/book/details', book.id]"><fa-icon [icon]="faInfo"></fa-icon></a></td>
+                            <td><a [routerLink]="['/book/edit', book.id]"><fa-icon [icon]="faPenNib"></fa-icon></a></td>
+                            <td><a [routerLink]="['/book/delete', book.id]" [queryParams]="{page: page}"><fa-icon [icon]="faCross"></fa-icon></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="div" *ngIf="loadPage == false && spinner == false">
+                <h4 class="text-center">Unable to load data 🥲</h4>
+            </div>
+        </div>
+
+<div class="col-lg-10"></div>
+</div>

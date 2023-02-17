@@ -1,0 +1,23 @@
+<div class="container d-flex align-items-center justify-content-center min-vh-50">
+    <div>
+        <h1 class="p-5">Add Author</h1>
+        <form #gfg="ngForm">
+            <div class="name">
+                <label for="Name">Name:</label>&nbsp;
+                <input type="text" name="Name" id="AuthorName" class="p-2 w-100" [(ngModel)]="name">   
+            </div> <br>
+            <div class="dob">
+                <label for="dob">Date of birth:</label>
+                <input type="date" name="dob" id="dob" class="w-100 p-2" [(ngModel)]="dob">
+            </div><br>
+            <div class="shortBio">
+                <label for="shortBio">Short bio:</label>
+                <textarea name="shortBio" id="shortBio" cols="30" rows="5" class="w-100 p-2" [(ngModel)]="sbio"></textarea>
+            </div>
+            <div class="button">
+                <br>
+                <button class="btn btn-primary w-100 p-2" (click)="Add()">Add Author</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-lg-2">
+        <app-sidebar [whichPage]="'publisher'"></app-sidebar>
+    </div>
+    <div class="col-lg-10">
+        
+        <!-- Heading -->
+        <h1 class="text-center p-5">All publishers</h1>
+
+        <app-spinner [spinner]="spinner"></app-spinner>
+
+        <div class="err p-5 d-flex align-items-center justify-content-center" *ngIf="pageLoadSuccess===false && spinner===false">
+            Unable to load data 
+        </div>
+        
+        <!-- search bar and pagination -->
+        <div *ngIf="pageLoadSuccess===true && spinner===false">
+            <div class="row">
+                <div class="col-lg-6">
+                    <app-pagination-button [page]="page" [nextCount]="totalCount" [parent]="'publisher'"></app-pagination-button>
+                </div>
+                <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                    <input type="text" placeholder="Search.." class="p-2 w-50" (keyup)="search()" [(ngModel)]="searchField">
+                </div>
+            </div>
+
+            <!-- Table of data -->
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Info</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr scope="row" *ngFor="let publisher of publishers">
+                        <td class="p-3">{{publisher.name}}</td>
+                        <td><a href="" [routerLink]="['/publisher/details/', publisher.id]"><fa-icon [icon]="faInfo"></fa-icon></a></td>
+                        <td><a href="" [routerLink]="['/publisher/edit/', publisher.id]"><fa-icon [icon]="faPenNib"></fa-icon></a></td>
+                        <td><a href="" [routerLink]="['/publisher/delete/', publisher.id]"><fa-icon [icon]="faCross"></fa-icon></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

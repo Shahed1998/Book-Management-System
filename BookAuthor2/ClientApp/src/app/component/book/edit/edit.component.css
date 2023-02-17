@@ -1,0 +1,11 @@
+.author{
+ width: 100%;
+ padding: 24px;  
+ margin-bottom: 10px; 
+ border: 1px solid #000;
+ cursor: pointer;
+}
+
+.inner-edit-container-body {
+    width: 40%;
+}

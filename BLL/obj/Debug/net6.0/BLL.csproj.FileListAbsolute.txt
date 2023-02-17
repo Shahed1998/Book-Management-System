@@ -1,0 +1,15 @@
+D:\Shahed\BookAuthor2\BLL\bin\Debug\net6.0\BLL.deps.json
+D:\Shahed\BookAuthor2\BLL\bin\Debug\net6.0\BLL.dll
+D:\Shahed\BookAuthor2\BLL\bin\Debug\net6.0\BLL.pdb
+D:\Shahed\BookAuthor2\BLL\bin\Debug\net6.0\DAL.dll
+D:\Shahed\BookAuthor2\BLL\bin\Debug\net6.0\DAL.pdb
+D:\Shahed\BookAuthor2\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+D:\Shahed\BookAuthor2\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Shahed\BookAuthor2\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+D:\Shahed\BookAuthor2\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+D:\Shahed\BookAuthor2\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+D:\Shahed\BookAuthor2\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
+D:\Shahed\BookAuthor2\BLL\obj\Debug\net6.0\BLL.dll
+D:\Shahed\BookAuthor2\BLL\obj\Debug\net6.0\refint\BLL.dll
+D:\Shahed\BookAuthor2\BLL\obj\Debug\net6.0\BLL.pdb
+D:\Shahed\BookAuthor2\BLL\obj\Debug\net6.0\ref\BLL.dll

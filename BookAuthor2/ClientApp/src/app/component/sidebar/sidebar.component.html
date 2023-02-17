@@ -1,0 +1,14 @@
+<!-- Book page sidebar -->
+<div class="sidebar" *ngIf="whichPage === 'book'">
+    <a [routerLink]="['/book/add']" class="btn btn-success active">Add book</a>    
+</div>
+
+<!-- Publisher page sidebar -->
+<div class="sidebar" *ngIf="whichPage === 'publisher'">
+    <a [routerLink]="['/publisher/add']" class="btn btn-success active">Add publisher</a>    
+</div>
+
+<!-- Author page sidebar -->
+<div class="sidebar" *ngIf="whichPage === 'author'">
+    <a [routerLink]="['/author/add']" class="btn btn-success active">Add author</a>    
+</div>
